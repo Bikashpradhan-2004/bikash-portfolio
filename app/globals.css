@@ -123,4 +123,14 @@
     font-family: var(--font-jetbrainsMono), monospace;
     @apply bg-primary text-white leading-loose;
   }
+
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+    color: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .group:hover .text-outline {
+    -webkit-text-stroke: 1px #00ff99;
+  }
 }

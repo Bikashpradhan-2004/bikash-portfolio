@@ -23,7 +23,7 @@ const about = {
     { fieldName: "Experience", fieldValue: "12+ Years" },
     { fieldName: "Skype", fieldValue: "luke.01" },
     { fieldName: "Nationality", fieldValue: "Indian" },
-    { fieldName: "Email", fieldValue: "kpradhanbikash2002@gmail.com" },
+    { fieldName: "Email", fieldValue: "mail@bikashcodes.online" },
     { fieldName: "Address", fieldValue: "Bhubaneswar, Odisha, India" },
     { fieldName: "Freelance", fieldValue: "Available" },
     { fieldName: "Languages", fieldValue: "English, Hindi, Odia" },
@@ -92,7 +92,7 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 2.4, dilay: 0.4, ease: "easeIn" },
       }}
-      className="min-h[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h[80vh] flex items-center justify-center my-4 mx-auto"
     >
       <div className="container mx-auto">
         <Tabs
@@ -105,7 +105,7 @@ const Resume = () => {
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
-          <div className="min-h-[70vh] w-full">
+          <div className="min-h-[70vh] w-full ml-0 xl:ml-[60px] mt-8 xl:mt-0">
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experiences.title}</h3>
@@ -173,33 +173,46 @@ const Resume = () => {
                   </p>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((skill, index) => {
+                  {skills.skillList.map(({ id, name, icon }) => {
                     return (
-                      <div className="relative">
-                        <div
-                          key={index}
-                          className="relative"
-                          data-tooltip-id={skill.id}
-                        >
+                      <div className="relative" key={id}>
+                        <div data-tooltip-id={id}>
                           <div className="w-full h-[150px] flex justify-center items-center p-6 bg-[#232329] rounded-xl group">
                             <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                              {skill.icon}
+                              {icon}
                             </div>
                           </div>
                         </div>
-                        <Tooltip
-                          id={skill.id}
-                          place="top"
-                          content={skill.name}
-                        />
+                        <Tooltip id={id} place="top" content={name} />
                       </div>
                     );
                   })}
                 </div>
               </div>
             </TabsContent>
-            <TabsContent value="about" className="w-full">
-              hiiiiii
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-6 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4"
+                      >
+                        <span className="text-white/60">{item.fieldName}:</span>
+                        <span className="text-sm">{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>

@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
+import TextTypeAnimation from "@/components/TextTypeAnimation";
 
 export default function Home() {
   return (
@@ -12,9 +12,11 @@ export default function Home() {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
-            <h1 className="h1 text-3xl lg:text-5xl font-semibold my-6">
+            <h1 className="h1 text-xl md:text-4xl lg:text-5xl font-semibold my-6">
               Hello I'm <br />{" "}
-              <span className="text-accent mt-2">Bikash Kumar Pradhan</span>
+              <span className="text-accent mt-2">
+                <TextTypeAnimation />
+              </span>
             </h1>
             <p className="max-w-xl mb-9 text-white/80 text-sm md:text-base">
               I excel at crefting elegant experiences and I am proficient in

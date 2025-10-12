@@ -8,7 +8,6 @@ const TextTypeAnimation = () => {
       speed={50}
       repeat={Infinity}
       style={{ display: "inline-block" }}
-      className="text-xl md:text-6xl"
     />
   );
 };

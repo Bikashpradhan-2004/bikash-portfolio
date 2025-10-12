@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
-            <h1 className="h1 text-xl md:text-4xl lg:text-5xl font-semibold my-6">
+            <h1 className="h1 text-2xl md:text-4xl lg:text-5xl font-semibold my-6">
               Hello I'm <br />{" "}
               <span className="text-accent mt-2">
                 <TextTypeAnimation />

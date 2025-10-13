@@ -1,11 +1,33 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedinIn, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const socials = [
-  { icon: <FaGithub />, url: "https://github.com/", label: "GitHub" },
-  { icon: <FaLinkedinIn />, url: "https://linkedin.com/", label: "LinkedIn" },
-  { icon: <FaYoutube />, url: "https://youtube.com/", label: "YouTube" },
-  { icon: <FaTwitter />, url: "https://twitter.com/", label: "Twitter" },
+  {
+    icon: <FaGithub />,
+    url: "https://github.com/Bikashpradhan-2004",
+    label: "GitHub",
+  },
+  {
+    icon: <FaLinkedinIn />,
+    url: "https://www.linkedin.com/in/pradhanbikash/",
+    label: "LinkedIn",
+  },
+  {
+    icon: <FaTwitter />,
+    url: "https://x.com/BikashK83627301",
+    label: "Twitter",
+  },
+  {
+    icon: <FaInstagram />,
+    url: "https://www.instagram.com/bikash.kumar2003/",
+    label: "Instagram",
+  },
+  {
+    icon: <SiLeetcode />,
+    url: "https://leetcode.com/u/BikashKumarPradhan/",
+    lebel: "LeetCode",
+  },
 ];
 
 const Social = ({ containerStyles, iconStyles }) => {

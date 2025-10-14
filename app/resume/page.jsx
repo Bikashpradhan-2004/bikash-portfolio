@@ -7,7 +7,9 @@ import {
   FaFigma,
   FaNodeJs,
 } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
+import { TbBrandTypescript, TbBrandCpp } from "react-icons/tb";
+import { SiTailwindcss, SiNextdotjs, SiSap } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
@@ -16,62 +18,70 @@ import { Tooltip } from "react-tooltip";
 const about = {
   title: "About Me",
   description:
-    "I am a passionate web developer with a knack for creating dynamic and responsive web applications. With a strong foundation in both front-end and back-end technologies, I strive to deliver seamless user experiences and efficient solutions. My expertise includes HTML, CSS, JavaScript, React, Node.js, and more. I am constantly learning and adapting to new technologies to stay ahead in the ever-evolving field of web development.",
+    "Coming from a non-CS background, my curiosity and eagerness to learn helped me quickly gain hands-on experience in web development. Through internships, I worked with Next.js, React, Tailwind CSS, TypeScript, and CMS, building responsive and scalable applications. I thrive on tackling real-world challenges, learning new technologies rapidly, and delivering high-quality solutions. I am passionate about contributing to innovative teams and continuously growing my skills.",
   info: [
     { fieldName: "Name", fieldValue: "Bikash Kumar Pradhan" },
     { fieldName: "Phone", fieldValue: "+91 83398 13428" },
-    { fieldName: "Experience", fieldValue: "12+ Years" },
-    { fieldName: "Skype", fieldValue: "luke.01" },
+    { fieldName: "Experience", fieldValue: "8+ months" },
     { fieldName: "Nationality", fieldValue: "Indian" },
     { fieldName: "Email", fieldValue: "mail@bikashcodes.online" },
     { fieldName: "Address", fieldValue: "Bhubaneswar, Odisha, India" },
     { fieldName: "Freelance", fieldValue: "Available" },
     { fieldName: "Languages", fieldValue: "English, Hindi, Odia" },
+    { fieldName: "Soft Skills", fieldValue: "Problem-solving, Teamwork" },
   ],
 };
 
 const experiences = {
-  icon: "",
   title: "My experience",
   description:
-    "With over 12 years of experience in web development, I have honed my skills in creating robust and scalable web applications. My journey has taken me through various roles",
+    "Through my internship at Edubiz Networks, I gained hands-on experience in full-stack web development, strengthened my skills in Next.js, Tailwind CSS, and TypeScript, and improved my understanding of scalable design, API integration, and performance optimization while learning to collaborate effectively in an agile, team-driven environment.",
   items: [
-    { company: "TCS", position: "Web Developer", duration: "2012 - 2015" },
     {
-      company: "Infosys",
-      position: "Senior Web Developer",
-      duration: "2015 - 2018",
+      company: "Edubiz Networks",
+      position: "Full stack Developer Intern",
+      duration: "Jun,2025 - Present",
     },
-    { company: "Wipro", position: "Lead Developer", duration: "2018 - 2021" },
-    { company: "HCL", position: "Project Manager", duration: "2021 - Present" },
+    {
+      company: "Edubiz Networks",
+      position: "Web Developer Intern",
+      duration: "Mar,2025 - May,2025",
+    },
   ],
 };
 
 const education = {
-  icon: "",
-  title: "My experience",
+  title: "My education",
   description:
-    "With over 12 years of experience in web development, I have honed my skills in creating robust and scalable web applications. My journey has taken me through various roles",
+    "With a strong foundation in mathematics and a passion for technology, I apply analytical and problem-solving skills to develop efficient, data-driven solutions. My understanding of algorithms and programming, strengthened by mathematical reasoning, enables me to bridge theory and real-world applications through innovative and intelligent software development.",
   items: [
-    { institution: "TCS", degree: "Web Developer", duration: "2012 - 2015" },
     {
-      institution: "Infosys",
-      degree: "Senior Web Developer",
-      duration: "2015 - 2018",
+      institution: "Odisha University of Technology & Research (OUTR)",
+      degree: "MCA",
+      duration: "2024 - 2026",
     },
-    { institution: "Wipro", degree: "Lead Developer", duration: "2018 - 2021" },
     {
-      institution: "HCL",
-      degree: "Project Manager",
-      duration: "2021 - Present",
+      institution: "Science College (Autonomous) HINJILICUT",
+      degree: "Bsc Mathematics",
+      duration: "2021 - 2024",
+    },
+    {
+      institution: "Science H S School HINJILICUT",
+      degree: "Intermediate",
+      duration: "2019 - 2021",
+    },
+    {
+      institution: "Panchayat H School DHINKISALA",
+      degree: "Matric",
+      duration: "2018 - 2019",
     },
   ],
 };
 
 const skills = {
-  title: "My experience",
+  title: "My skills",
   description:
-    "With over 12 years of experience in web development, I have honed my skills in creating robust and scalable web applications. My journey has taken me through various roles",
+    "I’m a web developer passionate about creating Next.js, React, TypeScript, and Tailwind CSS applications with strong SEO. I enjoy building responsive, scalable websites and collaborating in agile teams to deliver smooth, high-quality user experiences.",
   skillList: [
     { icon: <FaHtml5 />, name: "HTML5", id: "html5" },
     { icon: <FaCss3 />, name: "CSS3", id: "css3" },
@@ -81,6 +91,10 @@ const skills = {
     { icon: <SiTailwindcss />, name: "Tailwind CSS", id: "tailwindcss" },
     { icon: <FaNodeJs />, name: "Node.js", id: "nodejs" },
     { icon: <FaFigma />, name: "Figma", id: "figma" },
+    { icon: <TbBrandTypescript />, name: "Type Script", id: "typescript" },
+    { icon: <GrMysql />, name: "My SQL", id: "mysql" },
+    { icon: <TbBrandCpp />, name: "C++", id: "cpp" },
+    { icon: <SiSap />, name: "Sap ABAP", id: "sapabap" },
   ],
 };
 
@@ -109,7 +123,7 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experiences.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 text-sm md:text-base">
                   {experiences.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -138,7 +152,7 @@ const Resume = () => {
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 text-sm md:text-base">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -168,7 +182,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 text-sm md:text-base">
                     {skills.description}
                   </p>
                 </div>
@@ -196,7 +210,7 @@ const Resume = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 text-sm md:text-base">
                   {about.description}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-6 max-w-[620px] mx-auto xl:mx-0">

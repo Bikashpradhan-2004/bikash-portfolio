@@ -7,7 +7,7 @@ import {
   FaFigma,
   FaNodeJs,
 } from "react-icons/fa";
-import { GrMysql } from "react-icons/gr";
+import { PiFileSqlDuotone } from "react-icons/pi";
 import { TbBrandTypescript, TbBrandCpp } from "react-icons/tb";
 import { SiTailwindcss, SiNextdotjs, SiSap } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -92,7 +92,7 @@ const skills = {
     { icon: <FaNodeJs />, name: "Node.js", id: "nodejs" },
     { icon: <FaFigma />, name: "Figma", id: "figma" },
     { icon: <TbBrandTypescript />, name: "Type Script", id: "typescript" },
-    { icon: <GrMysql />, name: "My SQL", id: "mysql" },
+    { icon: <PiFileSqlDuotone />, name: "SQL", id: "sql" },
     { icon: <TbBrandCpp />, name: "C++", id: "cpp" },
     { icon: <SiSap />, name: "Sap ABAP", id: "sapabap" },
   ],

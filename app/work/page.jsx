@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import ProjectCard from "@/components/Work/ProjectCard";
 import ProjectGallery from "@/components/Work/ProjectGallery";
-import { projects } from "@/components/Work/projects";
+import { PROJECTS } from "@/constants/projects";
 
 export default function Work() {
-  const [project, setProject] = useState(projects[0]);
+  const [project, setProject] = useState(PROJECTS[0]);
 
   const handleSlideChange = (index) => {
-    setProject(projects[index]);
+    setProject(PROJECTS[index]);
   };
 
   return (
@@ -25,7 +25,7 @@ export default function Work() {
           </div>
           <div className="w-full xl:w-[50%]">
             <ProjectGallery
-              projects={projects}
+              projects={PROJECTS}
               onSlideChange={handleSlideChange}
             />
           </div>

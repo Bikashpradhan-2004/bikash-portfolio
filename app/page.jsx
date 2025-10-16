@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
-import Social from "@/components/Social";
-import Photo from "@/components/Photo";
-import Stats from "@/components/Stats";
+import Social from "@/components/Home/Social";
+import Photo from "@/components/Home/Photo";
+import Stats from "@/components/Home/Stats";
 import TextTypeAnimation from "@/components/TextTypeAnimation";
 import Link from "next/link";
 

@@ -31,7 +31,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="uppercase flex items-center gap-2 rounded-full"
+                  className="uppercase flex items-center gap-2 rounded-full cursor-pointer"
                 >
                   <span>Download CV</span>
                   <FiDownload className="text-xl" />

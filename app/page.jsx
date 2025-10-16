@@ -3,7 +3,7 @@ import { FiDownload } from "react-icons/fi";
 import Social from "@/components/Home/Social";
 import Photo from "@/components/Home/Photo";
 import Stats from "@/components/Home/Stats";
-import TextTypeAnimation from "@/components/TextTypeAnimation";
+import TextTypeAnimation from "@/components/Home/TextTypeAnimation";
 import Link from "next/link";
 
 export default function Home() {

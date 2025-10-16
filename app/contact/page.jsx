@@ -16,7 +16,8 @@ import {
 } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const info = [
   { icon: <FaPhoneAlt />, title: "Phone", description: "+91 83398 13428" },
@@ -33,6 +34,7 @@ const info = [
 ];
 
 const Contact = () => {
+  const form = useRef();
   const [service, setService] = useState("");
 
   const validationSchema = Yup.object({
@@ -57,10 +59,24 @@ const Contact = () => {
     },
     validationSchema,
     onSubmit: (values, { resetForm }) => {
-      console.log("Form submitted:", values);
-      alert("Message sent successfully!");
-      resetForm();
-      setService("");
+      emailjs
+        .sendForm(
+          "service_q02bwlp",
+          "template_edsfbv3",
+          form.current,
+          "cMHZLgUHEYbyqTh7z"
+        )
+        .then(
+          () => {
+            alert("Message sent successfully!");
+            resetForm();
+            setService("");
+          },
+          (error) => {
+            console.error("Email send error:", error.text);
+            alert("Failed to send message. Please try again.");
+          }
+        );
     },
   });
 
@@ -77,6 +93,7 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-10">
           <div className="flex-1 order-2 xl:order-none">
             <form
+              ref={form}
               onSubmit={formik.handleSubmit}
               className="flex flex-col gap-6 p-6 md:p-10 bg-[#27272c] rounded-xl"
             >
@@ -105,7 +122,6 @@ const Contact = () => {
                     </p>
                   )}
                 </div>
-
                 <div className="w-full">
                   <Input
                     type="text"
@@ -122,7 +138,6 @@ const Contact = () => {
                     </p>
                   )}
                 </div>
-
                 <div className="w-full">
                   <Input
                     type="email"
@@ -139,7 +154,6 @@ const Contact = () => {
                     </p>
                   )}
                 </div>
-
                 <div className="w-full">
                   <Input
                     type="tel"
@@ -156,7 +170,6 @@ const Contact = () => {
                     </p>
                   )}
                 </div>
-
                 <div className="col-span-1 md:col-span-2 w-full">
                   <Select
                     onValueChange={(value) => {
@@ -171,9 +184,24 @@ const Contact = () => {
                     <SelectContent>
                       <SelectGroup>
                         <SelectLabel>Select a service</SelectLabel>
-                        <SelectItem value="web">Web Development</SelectItem>
-                        <SelectItem value="uiux">UI/UX Design</SelectItem>
-                        <SelectItem value="logo">Logo Design</SelectItem>
+                        <SelectItem value="Frontend Development (React/Next.js)">
+                          Frontend Development (React/Next.js)
+                        </SelectItem>
+                        <SelectItem value="Web Development">
+                          Web Development
+                        </SelectItem>
+                        <SelectItem value="Full Stack Development">
+                          Full Stack Development
+                        </SelectItem>
+                        <SelectItem value="Database Design & SQL">
+                          Database Design & SQL
+                        </SelectItem>
+                        <SelectItem value="Software Development (C/C++)">
+                          Software Development (C/C++)
+                        </SelectItem>
+                        <SelectItem value="SAP ABAP Development">
+                          SAP ABAP Development
+                        </SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
@@ -182,7 +210,6 @@ const Contact = () => {
                       {formik.errors.service}
                     </p>
                   )}
-
                   <Textarea
                     name="message"
                     className="h-[200px] mt-4 w-full"
@@ -199,12 +226,14 @@ const Contact = () => {
                 </div>
               </div>
 
-              <Button type="submit" className="mt-4 w-full md:w-auto">
+              <Button
+                type="submit"
+                className="mt-4 w-full md:w-auto cursor-pointer"
+              >
                 Send Message
               </Button>
             </form>
           </div>
-
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
               {info.map((item, index) => (

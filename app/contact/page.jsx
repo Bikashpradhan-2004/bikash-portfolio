@@ -1,5 +1,7 @@
 "use client";
 
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,26 +16,54 @@ import {
 } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "(+40) 321 654 876",
-  },
+  { icon: <FaPhoneAlt />, title: "Phone", description: "+91 83398 13428" },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "contact@example.com",
+    description: "mail@bikashcodes.online",
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "123 Main Street, City, Country",
+    description: "Bhubaneswer, Odisha",
   },
 ];
 
 const Contact = () => {
+  const [service, setService] = useState("");
+
+  const validationSchema = Yup.object({
+    firstname: Yup.string().required("Firstname is required"),
+    lastname: Yup.string().required("Lastname is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    phone: Yup.string()
+      .matches(/^[0-9]{10}$/, "Enter a valid 10-digit phone number")
+      .required("Phone number is required"),
+    message: Yup.string().required("Message is required"),
+    service: Yup.string().required("Please select a service"),
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone: "",
+      message: "",
+      service: "",
+    },
+    validationSchema,
+    onSubmit: (values, { resetForm }) => {
+      console.log("Form submitted:", values);
+      alert("Message sent successfully!");
+      resetForm();
+      setService("");
+    },
+  });
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -46,22 +76,95 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col xl:flex-row gap-10">
           <div className="flex-1 order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-6 md:p-10 bg-[#27272c] rounded-xl">
+            <form
+              onSubmit={formik.handleSubmit}
+              className="flex flex-col gap-6 p-6 md:p-10 bg-[#27272c] rounded-xl"
+            >
               <h3 className="text-3xl md:text-4xl text-accent font-semibold">
                 Let's work together
               </h3>
               <p className="text-white/60 text-sm md:text-base">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
-                nihil sapiente pariatur id totam.
+                Feel free to reach out for collaborations or just a friendly
+                chat.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                <Input type="text" placeholder="Firstname" />
-                <Input type="text" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="tel" placeholder="Phone number" />
-                <div className="col-span-1 md:col-span-2">
-                  <Select>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="w-full">
+                  <Input
+                    type="text"
+                    name="firstname"
+                    placeholder="Firstname"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.firstname}
+                    className="w-full"
+                  />
+                  {formik.touched.firstname && formik.errors.firstname && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formik.errors.firstname}
+                    </p>
+                  )}
+                </div>
+
+                <div className="w-full">
+                  <Input
+                    type="text"
+                    name="lastname"
+                    placeholder="Lastname"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.lastname}
+                    className="w-full"
+                  />
+                  {formik.touched.lastname && formik.errors.lastname && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formik.errors.lastname}
+                    </p>
+                  )}
+                </div>
+
+                <div className="w-full">
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Email address"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
+                    className="w-full"
+                  />
+                  {formik.touched.email && formik.errors.email && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formik.errors.email}
+                    </p>
+                  )}
+                </div>
+
+                <div className="w-full">
+                  <Input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone number"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.phone}
+                    className="w-full"
+                  />
+                  {formik.touched.phone && formik.errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formik.errors.phone}
+                    </p>
+                  )}
+                </div>
+
+                <div className="col-span-1 md:col-span-2 w-full">
+                  <Select
+                    onValueChange={(value) => {
+                      setService(value);
+                      formik.setFieldValue("service", value);
+                    }}
+                    value={service}
+                  >
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
@@ -74,14 +177,31 @@ const Contact = () => {
                       </SelectGroup>
                     </SelectContent>
                   </Select>
+                  {formik.touched.service && formik.errors.service && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formik.errors.service}
+                    </p>
+                  )}
+
                   <Textarea
-                    className="h-[200px] mt-4"
+                    name="message"
+                    className="h-[200px] mt-4 w-full"
                     placeholder="Type your message here."
-                  ></Textarea>
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.message}
+                  />
+                  {formik.touched.message && formik.errors.message && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formik.errors.message}
+                    </p>
+                  )}
                 </div>
               </div>
 
-              <Button className="mt-4 w-full md:w-auto">Send Message</Button>
+              <Button type="submit" className="mt-4 w-full md:w-auto">
+                Send Message
+              </Button>
             </form>
           </div>
 

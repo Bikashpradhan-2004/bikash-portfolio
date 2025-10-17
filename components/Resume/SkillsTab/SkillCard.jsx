@@ -10,7 +10,12 @@ const SkillCard = ({ id, name, icon }) => {
           </div>
         </div>
       </div>
-      <Tooltip id={id} place="top" content={name} />
+      <Tooltip
+        id={id}
+        place="top"
+        content={name}
+        className="!bg-black/50 !rounded-md"
+      />
     </div>
   );
 };

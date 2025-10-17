@@ -1,5 +1,5 @@
-import ActionButtons from "../ActionButtons";
-import TechStack from "../TechStack";
+import ActionButtons from "./ActionButtons";
+import TechStack from "./TechStack";
 
 const ProjectCard = ({ num, category, description, stack, live, github }) => {
   return (

@@ -14,7 +14,7 @@ export default function Resume() {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 1.7, duration: 0.4, ease: "easeIn" },
       }}
       className="min-h[80vh] flex items-center justify-center my-4 mx-auto"
     >

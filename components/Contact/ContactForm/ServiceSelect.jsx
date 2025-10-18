@@ -33,6 +33,7 @@ const ServiceSelect = ({ formik, service, setService }) => {
           </SelectGroup>
         </SelectContent>
       </Select>
+
       {formik.touched.service && formik.errors.service && (
         <p className="text-red-500 text-sm mt-1">{formik.errors.service}</p>
       )}

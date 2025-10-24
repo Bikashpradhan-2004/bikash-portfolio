@@ -1,19 +1,13 @@
 "use client";
 import CountUp from "react-countup";
-
-const stats = [
-  { number: 8, text: "months of experience" },
-  { number: 12, text: "Technologies known" },
-  { number: 160, text: "Code commits" },
-  { number: 270, text: "Leetcode Problems" },
-];
+import { STATS } from "@/constants/home";
 
 const Stats = () => {
   return (
     <section>
       <div className="container mx-auto">
         <div className="flex flex-wrap gap-2 md:gap-4 max-w-[80vw] mx-auto xl:max-w-none">
-          {stats.map((stat, index) => {
+          {STATS.map((stat, index) => {
             return (
               <div
                 key={index}

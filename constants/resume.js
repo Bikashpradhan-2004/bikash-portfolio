@@ -5,10 +5,13 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaGitlab,
 } from "react-icons/fa";
-import { PiFileSqlDuotone } from "react-icons/pi";
 import { TbBrandTypescript, TbBrandCpp } from "react-icons/tb";
 import { SiTailwindcss, SiNextdotjs, SiSap } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
 
 export const ABOUT = {
   title: "About Me",
@@ -87,8 +90,11 @@ export const SKILLS = {
     { icon: <FaNodeJs />, name: "Node.js", id: "nodejs" },
     { icon: <FaFigma />, name: "Figma", id: "figma" },
     { icon: <TbBrandTypescript />, name: "Type Script", id: "typescript" },
-    { icon: <PiFileSqlDuotone />, name: "SQL", id: "sql" },
+    { icon: <GrMysql />, name: "My SQL", id: "mysql" },
     { icon: <TbBrandCpp />, name: "C++", id: "cpp" },
     { icon: <SiSap />, name: "Sap ABAP", id: "sapabap" },
+    { icon: <FaGitAlt />, name: "Git", id: "git" },
+    { icon: <FaGithub />, name: "GitHub", id: "github" },
+    { icon: <FaGitlab />, name: "GitLab", id: "gitlab" },
   ],
 };

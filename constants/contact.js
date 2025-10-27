@@ -24,7 +24,7 @@ export const SERVICE_OPTIONS = [
 ];
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: "service_q02bwlp",
-  TEMPLATE_ID: "template_edsfbv3",
-  PUBLIC_KEY: "cMHZLgUHEYbyqTh7z",
+  SERVICE_ID: "service_sn7f2cw",
+  TEMPLATE_ID: "template_46ouy5w",
+  PUBLIC_KEY: "N69G3Z1z45QOWt1ve",
 };

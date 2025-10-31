@@ -28,3 +28,15 @@ export const EMAILJS_CONFIG = {
   TEMPLATE_ID: "template_46ouy5w",
   PUBLIC_KEY: "N69G3Z1z45QOWt1ve",
 };
+
+export const FORM_MESSAGES = {
+  LOADING: "Sending your message...",
+  SUCCESS: "Message sent successfully!",
+  ERROR: "Failed to send message. Please try again.",
+};
+
+export const FORM_CONFIG = {
+  TITLE: "Let's work together",
+  DESCRIPTION:
+    "Feel free to reach out for collaborations or just a friendly chat.",
+};

@@ -1,4 +1,3 @@
-// hooks/useContactForm.js
 import { useRef, useState } from "react";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
@@ -10,7 +9,7 @@ export const useContactForm = (validationSchema, initialValues) => {
   const form = useRef();
   const [service, setService] = useState("");
 
-  const handleSubmit = async (values, { resetForm, setSubmitting }) => {
+  const handleSubmit = async ({ resetForm, setSubmitting }) => {
     const loadingToast = toast.loading(FORM_MESSAGES.LOADING);
 
     try {

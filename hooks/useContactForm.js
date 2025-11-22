@@ -9,7 +9,7 @@ export const useContactForm = (validationSchema, initialValues) => {
   const form = useRef();
   const [service, setService] = useState("");
 
-  const handleSubmit = async ({ resetForm, setSubmitting }) => {
+  const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     const loadingToast = toast.loading(FORM_MESSAGES.LOADING);
 
     try {

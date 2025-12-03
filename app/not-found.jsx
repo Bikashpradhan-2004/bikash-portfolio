@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function NotFound() {
   return (
-    <section className="bg-white text-center text-gray-800">
+    <section className="text-center space-y-6">
       <h1 className="text-6xl md:text-8xl font-bold pt-10">404</h1>
       <div className="relative md:max-w-8/12 h-60 md:h-96 mx-auto">
         <Image
@@ -18,7 +18,7 @@ export default function NotFound() {
 
       <div className="pb-10">
         <h3 className="text-2xl font-semibold">Looks like you're lost</h3>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-gray-500">
           The page you are looking for is not available!
         </p>
 

@@ -23,12 +23,6 @@ export const SERVICE_OPTIONS = [
   "SAP ABAP Development",
 ];
 
-export const EMAILJS_CONFIG = {
-  SERVICE_ID: "service_sn7f2cw",
-  TEMPLATE_ID: "template_46ouy5w",
-  PUBLIC_KEY: "N69G3Z1z45QOWt1ve",
-};
-
 export const FORM_MESSAGES = {
   LOADING: "Sending your message...",
   SUCCESS: "Message sent successfully!",

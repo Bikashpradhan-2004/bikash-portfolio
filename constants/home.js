@@ -30,8 +30,8 @@ export const SOCIALS = [
 ];
 
 export const STATS = [
-  { number: 8, text: "months of experience" },
-  { number: 12, text: "Technologies known" },
-  { number: 160, text: "Code commits" },
-  { number: 290, text: "Leetcode Problems" },
+  { number: 10, text: "months of experience" },
+  { number: 15, text: "Technologies & Tools known" },
+  { number: 350, text: "Code commits" },
+  { number: 310, text: "Leetcode Problems" },
 ];

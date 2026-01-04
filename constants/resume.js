@@ -9,8 +9,16 @@ import {
   FaGithub,
   FaGitlab,
 } from "react-icons/fa";
+import { VscVscodeInsiders } from "react-icons/vsc";
+import { RiSupabaseFill } from "react-icons/ri";
 import { TbBrandTypescript, TbBrandCpp } from "react-icons/tb";
-import { SiTailwindcss, SiNextdotjs, SiSap } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiSap,
+  SiDrizzle,
+  SiShadcnui,
+} from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 
 export const ABOUT = {
@@ -88,13 +96,17 @@ export const SKILLS = {
     { icon: <SiNextdotjs />, name: "Next.js", id: "nextjs" },
     { icon: <SiTailwindcss />, name: "Tailwind CSS", id: "tailwindcss" },
     { icon: <FaNodeJs />, name: "Node.js", id: "nodejs" },
-    { icon: <FaFigma />, name: "Figma", id: "figma" },
     { icon: <TbBrandTypescript />, name: "Type Script", id: "typescript" },
     { icon: <GrMysql />, name: "My SQL", id: "mysql" },
     { icon: <TbBrandCpp />, name: "C++", id: "cpp" },
     { icon: <SiSap />, name: "Sap ABAP", id: "sapabap" },
+    { icon: <FaFigma />, name: "Figma", id: "figma" },
     { icon: <FaGitAlt />, name: "Git", id: "git" },
     { icon: <FaGithub />, name: "GitHub", id: "github" },
     { icon: <FaGitlab />, name: "GitLab", id: "gitlab" },
+    { icon: <VscVscodeInsiders />, name: "VS Code", id: "vscode" },
+    { icon: <SiDrizzle />, name: "Drizzle ORM", id: "drizzle" },
+    { icon: <RiSupabaseFill />, name: "Supabase", id: "supabase" },
+    { icon: <SiShadcnui />, name: "Shadcn UI", id: "shadcnui" },
   ],
 };

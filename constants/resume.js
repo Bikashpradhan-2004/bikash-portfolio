@@ -12,6 +12,7 @@ import {
 import { VscVscodeInsiders } from "react-icons/vsc";
 import { RiSupabaseFill } from "react-icons/ri";
 import { TbBrandTypescript, TbBrandCpp } from "react-icons/tb";
+import { IoLogoVercel } from "react-icons/io5";
 import {
   SiTailwindcss,
   SiNextdotjs,
@@ -100,6 +101,7 @@ export const SKILLS = {
     { icon: <GrMysql />, name: "My SQL", id: "mysql" },
     { icon: <TbBrandCpp />, name: "C++", id: "cpp" },
     { icon: <SiSap />, name: "Sap ABAP", id: "sapabap" },
+    { icon: <IoLogoVercel />, name: "Vercel", id: "vercel" },
     { icon: <FaFigma />, name: "Figma", id: "figma" },
     { icon: <FaGitAlt />, name: "Git", id: "git" },
     { icon: <FaGithub />, name: "GitHub", id: "github" },
